@@ -31,7 +31,7 @@ class Chatwork {
 	 * $apiToken: 自分が所属する部屋の一覧を取得
 	*/
 	private function getRooms() {
-		$uri = "https://api.chatwork.com/v1/rooms";
+		$uri = "https://api.chatwork.com/v2/rooms";
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $uri);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $this->reqHeader);
@@ -61,7 +61,7 @@ class Chatwork {
 	*/
 	public function sendMessage($roomid, $msg) {
 		// リクエストURI
-		$uri = "https://api.chatwork.com/v1/rooms/{$roomid}/messages";
+		$uri = "https://api.chatwork.com/v2/rooms/{$roomid}/messages";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $uri);
